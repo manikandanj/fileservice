@@ -6,6 +6,7 @@
 package com.mani.fileservice.controller;
 
 import com.mani.fileservice.entity.FileMetaData;
+import com.mani.fileservice.manager.IFileManager;
 import com.mani.fileservice.manager.IFileMetaDataManager;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,9 +27,13 @@ public class FileUploadController {
     @Autowired
     IFileMetaDataManager fileMetaDataMgr;
     
+    @Autowired
+    IFileManager fileManager;
+    
     //TODO Add more params for additional meta data
     @RequestMapping(value="/upload", method = RequestMethod.POST)
     public FileMetaData uploadFile(@RequestParam("file") MultipartFile file){
+        fileManager.uploadFile(file);
         return fileMetaDataMgr.storeMetaData(file);
     }
     
