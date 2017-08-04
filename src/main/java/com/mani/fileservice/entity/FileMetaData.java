@@ -6,12 +6,14 @@
 package com.mani.fileservice.entity;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import lombok.Data;
+import org.springframework.data.annotation.CreatedDate;
 
 /**
  *
@@ -36,4 +38,8 @@ public class FileMetaData implements Serializable{
     
     @Column(name = "file_size")
     private long fileSize;
+    
+    @CreatedDate
+    @Column(name="created_date")
+    private LocalDateTime createdDate;
 }

@@ -8,6 +8,7 @@ package com.mani.fileservice.manager.impl;
 import com.mani.fileservice.entity.FileMetaData;
 import com.mani.fileservice.manager.IFileMetaDataManager;
 import com.mani.fileservice.persistence.db.IFileMetaDataRepository;
+import java.time.LocalDateTime;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -30,6 +31,7 @@ public class FileMetaDataManagerImpl implements IFileMetaDataManager{
         fileMetaData.setContentType(file.getContentType());
         fileMetaData.setFileName(file.getOriginalFilename());
         fileMetaData.setFileSize(file.getSize());
+        fileMetaData.setCreatedDate(LocalDateTime.now());
         return fileMetaDataRepository.save(fileMetaData);
     }
 
