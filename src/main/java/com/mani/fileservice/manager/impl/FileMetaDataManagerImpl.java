@@ -37,5 +37,10 @@ public class FileMetaDataManagerImpl implements IFileMetaDataManager{
     public List<FileMetaData> fetchAllMetaData() {
         return fileMetaDataRepository.findAll();
     }
+
+    @Override
+    public FileMetaData findMetaDataByFileId(Long fileId) {
+        return fileMetaDataRepository.findOne(fileId);
+    }
     
 }
