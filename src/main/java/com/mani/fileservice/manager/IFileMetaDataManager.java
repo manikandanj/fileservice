@@ -18,4 +18,5 @@ public interface IFileMetaDataManager {
     public FileMetaData storeMetaData(MultipartFile file);
     public List<FileMetaData> fetchAllMetaData();
     public FileMetaData findMetaDataByFileId(Long fileId);
+    public List<FileMetaData> searchMetaData(FileMetaData metaData);
 }

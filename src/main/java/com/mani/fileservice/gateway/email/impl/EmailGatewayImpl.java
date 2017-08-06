@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
  * @author mani
  */
 
-//@Component
+@Component
 public class EmailGatewayImpl implements IEmailGateway{
 
     @Autowired
@@ -29,7 +29,7 @@ public class EmailGatewayImpl implements IEmailGateway{
         message.setTo(to);
         message.setSubject(subject);
         message.setText(body);
-        emailSender.send(message);
+        //emailSender.send(message);
     }
     
 }

@@ -9,11 +9,12 @@ import com.mani.fileservice.entity.FileMetaData;
 import java.time.LocalDateTime;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.querydsl.QueryDslPredicateExecutor;
 
 /**
  *
  * @author mani
  */
-public interface IFileMetaDataRepository extends JpaRepository<FileMetaData, Long>{
+public interface IFileMetaDataRepository extends JpaRepository<FileMetaData, Long>, QueryDslPredicateExecutor{
     public List<FileMetaData> findByCreatedDateAfter(LocalDateTime dateTime);
 }

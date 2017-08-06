@@ -26,7 +26,7 @@ public class FilePollManagerImpl implements IFilePollManager{
     @Autowired
     IFileMetaDataRepository fileMetaDataRepository;
     
-    //@Autowired
+    @Autowired
     IEmailGateway emailGateway;
     
     @Override
@@ -45,7 +45,7 @@ public class FilePollManagerImpl implements IFilePollManager{
             emailText.append(metaData.getFileName()).append("\r\n");
         }
         //TODO Move these to properties file.
-        //emailGateway.sendEmail("abc@xyz.com", "abc@xyz.com", "File upload report", emailText.toString());
+        emailGateway.sendEmail("file.report.bot@gmail.com", "file.report.bot@gmail.com", "File upload report", emailText.toString());
         System.out.println("********************* Sending email :" + emailText);
     }
     

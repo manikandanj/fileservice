@@ -51,4 +51,9 @@ public class FileController {
         return fileMetaDataMgr.fetchAllMetaData();
     }
     
+    @RequestMapping(value="/searchFiles", method = RequestMethod.GET)
+    public List<FileMetaData> searchFiles(FileMetaData fileMetaData){
+        return fileMetaDataMgr.searchMetaData(fileMetaData);
+    }
+    
 }
