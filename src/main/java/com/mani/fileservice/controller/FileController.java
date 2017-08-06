@@ -6,6 +6,7 @@
 package com.mani.fileservice.controller;
 
 import com.mani.fileservice.entity.FileMetaData;
+import com.mani.fileservice.gateway.email.IEmailGateway;
 import com.mani.fileservice.manager.IFileManager;
 import com.mani.fileservice.manager.IFileMetaDataManager;
 import java.util.List;
@@ -31,6 +32,9 @@ public class FileController {
     
     @Autowired
     IFileManager fileManager;
+    
+    @Autowired
+    IEmailGateway emailGateway;
     
     //TODO Add more params for additional meta data
     @RequestMapping(value="/upload", method = RequestMethod.POST)
