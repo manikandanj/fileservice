@@ -4,8 +4,8 @@ This is a sample Spring boot project which provides RESTful APIs to support file
 ## Run the application in local
 To run the application from local using Maven, 
 
-*cd fileservice*
-*mvn spring-boot:run*
+cd fileservice
+mvn spring-boot:run
 
 ## Swagger UI
 To look at the available rest endpoints, input parameters and to take it for a test drive, access the Swagger UI URL below:
