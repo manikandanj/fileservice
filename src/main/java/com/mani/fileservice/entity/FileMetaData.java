@@ -16,7 +16,7 @@ import lombok.Data;
 import org.springframework.data.annotation.CreatedDate;
 
 /**
- *
+ * Entity object to store File Meta data
  * @author mani
  */
 

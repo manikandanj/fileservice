@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
- *
+ * Manager class for File meta data related operations
  * @author mani
  */
 @Component

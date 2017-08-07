@@ -17,7 +17,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 /**
- *
+ * Manager class for polling operations
  * @author mani
  */
 @Component
