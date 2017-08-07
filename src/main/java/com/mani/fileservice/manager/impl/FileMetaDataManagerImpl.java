@@ -34,7 +34,12 @@ public class FileMetaDataManagerImpl implements IFileMetaDataManager {
         fileMetaData.setFileName(file.getOriginalFilename());
         fileMetaData.setFileSize(file.getSize());
         fileMetaData.setCreatedDate(LocalDateTime.now());
-        return fileMetaDataRepository.save(fileMetaData);
+        return this.storeMetaData(fileMetaData);
+    }
+
+    @Override
+    public FileMetaData storeMetaData(FileMetaData metaData) {
+        return fileMetaDataRepository.save(metaData);
     }
 
     @Override
@@ -51,14 +56,20 @@ public class FileMetaDataManagerImpl implements IFileMetaDataManager {
     public List<FileMetaData> searchMetaData(FileMetaData metaData) {
         QFileMetaData fileMetaData = QFileMetaData.fileMetaData;
         BooleanBuilder condition = new BooleanBuilder();
-         if (metaData.getFileId() != null) {
+        if (metaData.getFileId() != null) {
             condition.and(fileMetaData.fileId.eq(metaData.getFileId()));
         }
         if (metaData.getFileName() != null) {
             condition.and(fileMetaData.fileName.containsIgnoreCase(metaData.getFileName()));
         }
-         if (metaData.getContentType()!= null) {
+        if (metaData.getContentType() != null) {
             condition.and(fileMetaData.contentType.containsIgnoreCase(metaData.getContentType()));
+        }
+        if (metaData.getAuthor() != null) {
+            condition.and(fileMetaData.author.containsIgnoreCase(metaData.getAuthor()));
+        }
+        if (metaData.getVersion() != null) {
+            condition.and(fileMetaData.version.eq(metaData.getVersion()));
         }
         return Lists.newArrayList(fileMetaDataRepository.findAll(condition));
     }

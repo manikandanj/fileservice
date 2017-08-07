@@ -42,4 +42,8 @@ public class FileMetaData implements Serializable{
     @CreatedDate
     @Column(name="created_date")
     private LocalDateTime createdDate;
+    
+    private String author;
+    
+    private Float version;
 }

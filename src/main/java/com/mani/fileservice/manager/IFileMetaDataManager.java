@@ -16,6 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 public interface IFileMetaDataManager {
     public FileMetaData storeMetaData(MultipartFile file);
+    public FileMetaData storeMetaData(FileMetaData metaData);
     public List<FileMetaData> fetchAllMetaData();
     public FileMetaData findMetaDataByFileId(Long fileId);
     public List<FileMetaData> searchMetaData(FileMetaData metaData);
